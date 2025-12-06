@@ -1,0 +1,11 @@
+@import 'tailwindcss';
+
+@layer base {
+    body {
+        font-family: "Nunito Variable", "Noto Sans Thai Variable", sans-serif;
+    }
+}
+
+@layer utilities {
+
+}

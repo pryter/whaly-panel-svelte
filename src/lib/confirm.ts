@@ -1,0 +1,16 @@
+export async function confirm(sessionId: string, selection: string) {
+  if (!selection || !sessionId) return;
+  const r = await fetch(`https://api.whaly.pryter.me/search-result/${sessionId}/select`, { method: "POST", headers: {      'Accept': 'application/json',
+      'Content-Type': 'application/json'},
+    body: JSON.stringify({
+      option: selection,
+    })})
+  if (r.status === 200) {
+    const data = await r.json()
+    return {status: 200, data: data.data}
+  } else {
+    const data = await r.json()
+    console.log(data)
+    return {status: 400, data}
+  }
+}
