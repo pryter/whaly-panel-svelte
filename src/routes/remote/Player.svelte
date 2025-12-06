@@ -62,6 +62,14 @@
 
 </script>
 
+<style>
+    .truncated {
+        /* Must not be `display: flex` */
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+</style>
 
 <div class="absolute bottom-2 w-full flex items-center justify-center px-4">
     <div class="flex bg-white/85 px-3 pt-3 pb-1 backdrop-blur-2xl rounded-xl space-x-3 w-full max-w-md shadow-lg shrink">
@@ -86,10 +94,10 @@
                 </svg>
             </div>
         </div>
-        <div class="flex flex-col justify-between w-full">
-            <div>
-                <div class="flex items-center justify-between">
-                    <h2>{displayTrackData.title}</h2>
+        <div class="flex flex-col justify-between w-full pr-[72px]">
+            <div class="">
+                <div class="flex items-center justify-between space-x-2">
+                    <h2 class="break-all truncate">adkfjhaslfahflaiudsfghalisdug {displayTrackData.title}</h2>
                     <HeartIcon/>
                 </div>
                 <div class="">

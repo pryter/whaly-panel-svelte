@@ -100,34 +100,38 @@
             <h2 class="font-semibold text-xl">Queue</h2>
             <div class="flex flex-col space-y-2 mt-4">
                 <h3 class="font-medium text-sm text-gray-800">Up next</h3>
-                <div class="flex items-center space-x-2">
-                    <img src={connection.queue.next?.thumbnail} alt="Whaly" class="object-cover rounded-xl size-[40px]"/>
-                    <div class="w-full">
-                        <div class="flex items-start justify-between w-full">
-                            <h2 class="text-[13px] max-w-[200px] truncate">{connection.queue.next?.title}</h2>
-                            <AnimatedIcon name="heart" class="size-4" />
-                        </div>
-                        <div class="">
-                            <div class="flex items-center space-x-2">
-                                <div class="flex items-center space-x-1">
-                                    <svg id="Clock analog" class="size-4" viewBox="0 0 24 24" fill="none" stroke-width="2.2"  xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M12 21C16.9709 21 21 16.9699 21 12C21 7.02908 16.9709 3 12 3C7.02908 3 3 7.02908 3 12C3 16.9699 7.02908 21 12 21Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path>
-                                        <path d="M8.2124 14.1953L12 11.9318V7.0426" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path>
-                                        <path d="M12 11.995V12.005M12.8323 12C12.8323 12.4595 12.4597 12.8322 12.0001 12.8322C11.5405 12.8322 11.168 12.4595 11.168 12C11.168 11.5404 11.5405 11.1678 12.0001 11.1678C12.4597 11.1678 12.8323 11.5404 12.8323 12Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path>
-                                    </svg>
-                                    <span class="text-sm ">{formatTime(connection.queue.next?.duration ?? 0)}</span>
-                                </div>
-                                <div class="flex items-center space-x-1 -mt-0.5">
-                                    <svg id="user" class="size-4" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M12.1465 3.30078C14.8525 3.30078 17.0465 5.49478 17.0465 8.20078C17.0465 10.9068 14.8525 13.1008 12.1465 13.1008C9.44046 13.1008 7.24646 10.9068 7.24646 8.20078C7.24646 5.49478 9.44046 3.30078 12.1465 3.30078Z" fill="#000000"></path>
-                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M14.4466 14H9.94656C7.44656 14 5.34656 16.1 5.34656 18.6V18.9C5.34656 19.9 6.14656 20.7 7.14656 20.7H17.1466C18.1466 20.7 19.0466 20 18.9466 18.9V18.6C19.0466 16.1 16.9466 14 14.4466 14Z" fill="#000000"></path>
-                                    </svg>
-                                    <span class="text-sm ">{getRequester(connection.queue.next)}</span>
+                {#if connection.queue.next}
+                    <div class="flex items-center space-x-2">
+                        <img src={connection.queue.next?.thumbnail} alt="Whaly" class="object-cover rounded-xl size-[40px]"/>
+                        <div class="w-full">
+                            <div class="flex items-start justify-between w-full">
+                                <h2 class="text-[13px] max-w-[200px] truncate">{connection.queue.next?.title}</h2>
+                                <AnimatedIcon name="heart" class="size-4" />
+                            </div>
+                            <div class="">
+                                <div class="flex items-center space-x-2">
+                                    <div class="flex items-center space-x-1">
+                                        <svg id="Clock analog" class="size-4" viewBox="0 0 24 24" fill="none" stroke-width="2.2"  xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M12 21C16.9709 21 21 16.9699 21 12C21 7.02908 16.9709 3 12 3C7.02908 3 3 7.02908 3 12C3 16.9699 7.02908 21 12 21Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path>
+                                            <path d="M8.2124 14.1953L12 11.9318V7.0426" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path>
+                                            <path d="M12 11.995V12.005M12.8323 12C12.8323 12.4595 12.4597 12.8322 12.0001 12.8322C11.5405 12.8322 11.168 12.4595 11.168 12C11.168 11.5404 11.5405 11.1678 12.0001 11.1678C12.4597 11.1678 12.8323 11.5404 12.8323 12Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path>
+                                        </svg>
+                                        <span class="text-sm ">{formatTime(connection.queue.next?.duration ?? 0)}</span>
+                                    </div>
+                                    <div class="flex items-center space-x-1 -mt-0.5">
+                                        <svg id="user" class="size-4" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M12.1465 3.30078C14.8525 3.30078 17.0465 5.49478 17.0465 8.20078C17.0465 10.9068 14.8525 13.1008 12.1465 13.1008C9.44046 13.1008 7.24646 10.9068 7.24646 8.20078C7.24646 5.49478 9.44046 3.30078 12.1465 3.30078Z" fill="#000000"></path>
+                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M14.4466 14H9.94656C7.44656 14 5.34656 16.1 5.34656 18.6V18.9C5.34656 19.9 6.14656 20.7 7.14656 20.7H17.1466C18.1466 20.7 19.0466 20 18.9466 18.9V18.6C19.0466 16.1 16.9466 14 14.4466 14Z" fill="#000000"></path>
+                                        </svg>
+                                        <span class="text-sm ">{getRequester(connection.queue.next)}</span>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
+                {:else}
+                    <h3 class="text-gray-400 font-medium text-xs">Currently nothing</h3>
+                {/if}
 
                 <h3 class="font-medium text-gray-800 mt-4 text-sm">In Queue</h3>
                 {#each connection.queue.rest as item}

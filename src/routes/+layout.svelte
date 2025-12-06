@@ -4,12 +4,12 @@
     import '@fontsource-variable/nunito';
     import '@fontsource-variable/noto-sans-thai';
     import {initializeFirebase} from "$lib/firebase.client.ts";
+    
 
     let { children } = $props();
     $effect(() => {
       initializeFirebase()
     })
-
 </script>
 
 <svelte:head>
