@@ -97,7 +97,7 @@
         <div class="flex flex-col justify-between w-full pr-[72px]">
             <div class="">
                 <div class="flex items-center justify-between space-x-2">
-                    <h2 class="break-all truncate">adkfjhaslfahflaiudsfghalisdug {displayTrackData.title}</h2>
+                    <h2 class="break-all truncate">{displayTrackData.title}</h2>
                     <HeartIcon/>
                 </div>
                 <div class="">
