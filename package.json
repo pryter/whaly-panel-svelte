@@ -18,6 +18,7 @@
 		"@fontsource-variable/noto-sans-thai": "^5.2.8",
 		"@fontsource-variable/nunito": "^5.2.7",
 		"@sveltejs/adapter-auto": "^7.0.0",
+		"@sveltejs/adapter-netlify": "^5.2.4",
 		"@sveltejs/adapter-node": "^5.4.0",
 		"@sveltejs/kit": "^2.47.1",
 		"@sveltejs/vite-plugin-svelte": "^6.2.1",
@@ -35,7 +36,7 @@
 	},
 	"dependencies": {
 		"classnames": "^2.5.1",
-      "erela.js": "Tomato6966/erela.js",
+		"erela.js": "Tomato6966/erela.js",
 		"firebase": "^12.5.0",
 		"lottie-web": "^5.13.0",
 		"motion": "^12.23.24",
